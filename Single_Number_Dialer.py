@@ -2,13 +2,16 @@ import applescript
 
 scpt = applescript.AppleScript('''
     on run {arg1, arg2}
-        say arg1 & " " & arg2activate application "Messages"
-        tell application "System Events" to tell process "Messages"
-            key code 45 using command down           -- press Command + N to start a new window
-            keystroke "+17345856169‬"  -- input the phone number
-            key code 36                              -- press Enter to focus on the message area
-            keystroke "This is a test"       -- type some message
-            key code 36                              -- press Enter to send
-        end tell
+        say arg1 & " " & arg2
     end run
+    on foo()
+        return "bar"
+    end foo
+    on Baz(x, y)
+        return x * y
+    end bar
 ''')
+
+print(scpt.run('Hello', 'World')) #-> None
+print(scpt.call('foo')) #-> "bar"
+print(scpt.call('Baz', 3, 5)) #-> 15
