@@ -1,5 +1,6 @@
 #!/bin/bash
-for i in `cat $1`
+for phone_number in `cat $1`
 do
-echo $i
+echo $phone_number
+osascript sendMessage.applescript $phone_number "This is a much longer message"
 done
