@@ -4,5 +4,5 @@
 for phone_number in `cat $1`
   do
     echo $phone_number
-    osascript sendMessage.applescript $phone_number "Hello, it has been a while since I caught up with you so I wanted to check in and see how things are going?"
+    osascript sendMessage.applescript $phone_number "Hi, greetings from Rochester Hills, I hope this message find you well and coping ok with the 'current situation'"
   done
